@@ -39,7 +39,7 @@
 	<script>
 		angular.module('app', ['bs-select'])
 			.controller('testController', function($scope) {
-				scope.collection = [
+				$scope.collection = [
 					{
 						"value": "Alabama",
 						"key": "AL"
@@ -220,7 +220,7 @@
 					}
 				];
 
-				scope.model = scope.collection[20];
+				$scope.model = scope.collection[20];
 			});
 	</script>
 </body>
