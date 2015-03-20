@@ -25,7 +25,10 @@
 			</div>
 			<div class="bss-card__body" ng-controller="testController">
 				<div class="form-group">
-					<bs-select collection="collection" ng-model="model"></bs-select>
+					<div class="bss-row">
+						<div class="bss-col-xs-3">
+						<bs-select collection="collection" ng-model="model"></bs-select>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -220,7 +223,7 @@
 					}
 				];
 
-				$scope.model = scope.collection[20];
+				$scope.model = $scope.collection[20];
 			});
 	</script>
 </body>
