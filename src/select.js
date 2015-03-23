@@ -40,6 +40,10 @@ angular.module('bs-select')
 					el.find('.bs-select').addClass('+focus');
 				}
 
+				attr.$observe('disabled', function() {
+					scope.disabled = _.has(attr, 'disabled');
+				});
+
 				scope.keyDown = function(e) {
 					var key = e.which;
 					var item = ngModelCtrl.$viewValue;

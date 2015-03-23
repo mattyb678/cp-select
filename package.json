@@ -1,6 +1,6 @@
 {
   "name": "bs-select",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A consistently styled cross-browser select component",
   "main": "build/bs-select.js",
   "scripts": {

@@ -1,5 +1,5 @@
 <input class="bs-select__hidden-input" type="text" ng-focus="focusSelect()" ng-blur="onBlur($event)" ng-keydown="keyDown($event)"/>
-<div class="bs-select" ng-click="toggleDialog()">
+<div class="bs-select" ng-click="!disabled && toggleDialog()" ng-class="{'+disabled': disabled}">
 	<div class="bs-select__selected">
 	</div>
 	<div class="bs-select__icon">

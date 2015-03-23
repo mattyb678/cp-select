@@ -119,6 +119,10 @@
 					el.find(".bs-select").addClass("+focus");
 				};
 
+				attr.$observe("disabled", function () {
+					scope.disabled = _.has(attr, "disabled");
+				});
+
 				scope.keyDown = function (e) {
 					var key = e.which;
 					var item = ngModelCtrl.$viewValue;
@@ -235,7 +239,7 @@
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<input class=\"bs-select__hidden-input\" type=\"text\" ng-focus=\"focusSelect()\" ng-blur=\"onBlur($event)\" ng-keydown=\"keyDown($event)\"/>\n<div class=\"bs-select\" ng-click=\"toggleDialog()\">\n\t<div class=\"bs-select__selected\">\n\t</div>\n\t<div class=\"bs-select__icon\">\n\t</div>\n</div>\n<ul class=\"bs-select__menu bss-dropdown-menu\" role=\"menu\" ng-show=\"showDialog\">\n\t<li ng-mousedown=\"updateModel(item)\" ng-repeat=\"item in collection\" ng-class=\"{'+selected': (selectedIndex === $index)}\">\n\t\t<a>{{item.value}}</a>\n\t</li>\n</ul>\n";
+	module.exports = "<input class=\"bs-select__hidden-input\" type=\"text\" ng-focus=\"focusSelect()\" ng-blur=\"onBlur($event)\" ng-keydown=\"keyDown($event)\"/>\n<div class=\"bs-select\" ng-click=\"!disabled && toggleDialog()\" ng-class=\"{'+disabled': disabled}\">\n\t<div class=\"bs-select__selected\">\n\t</div>\n\t<div class=\"bs-select__icon\">\n\t</div>\n</div>\n<ul class=\"bs-select__menu bss-dropdown-menu\" role=\"menu\" ng-show=\"showDialog\">\n\t<li ng-mousedown=\"updateModel(item)\" ng-repeat=\"item in collection\" ng-class=\"{'+selected': (selectedIndex === $index)}\">\n\t\t<a>{{item.value}}</a>\n\t</li>\n</ul>\n";
 
 /***/ },
 /* 6 */
@@ -265,7 +269,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(9)();
-	exports.push([module.id, "bs-select {\n\tposition: relative;\n}\n\n.bs-select {\n\tborder-radius: 2px;\n\tbox-shadow: 0 1px 4px 0 rgba(0,0,0,.26);\n\tdisplay: inline-block;\n\tpadding: 8px 14px;\n\tmin-width: 180px;\n\tcolor: #AFAFAF;\n\tbackground-color: #fff;\n\tcursor: pointer;\n\twidth: 100%;\n}\n\n.bs-select.\\+focus {\n\tbox-shadow: 0 0 0 2px rgba(76,175,80,.3); /* emulate the border */\n}\n\n.bs-select__selected {\n\twidth: calc(100% - 15px);\n\tdisplay: inline-block;\n}\n\n.bs-select__icon {\n\tdisplay: inline-block;\n\tborder-color: #AFAFAF transparent;\n\tborder-style: solid;\n\tborder-width: 6px 6px 0px 6px;\n\theight: 0px;\n\twidth: 0px;\n\tfloat:right;\n\tposition: relative;\n\ttop: 5px;\n}\n\nbs-select .bs-select__menu {\n\tdisplay: block;\n\tmax-height: 400px;\n\toverflow: auto;\n\twidth: 100%;\n\tpositoin: absolute;\n}\n\nbs-select .bs-select__menu li {\n\theight: 36px!important;\n}\n\nbs-select .bs-select__menu li.\\+selected > a {\n\tcolor: #333333;\n\ttext-decoration: none;\n\tbackground-color: #f7f7f7;\n}\n\n.bs-select__hidden-input {\n\topacity: 0;\n\tposition: absolute;\n\tleft: 0;\n\ttop:0;\n\twidth: 0;\n\theight: 0;\n}\n\n", ""]);
+	exports.push([module.id, "bs-select {\n\tposition: relative;\n}\n\n.bs-select {\n\tborder-radius: 2px;\n\tbox-shadow: 0 1px 4px 0 rgba(0,0,0,.26);\n\tdisplay: inline-block;\n\tpadding: 8px 14px;\n\tmin-width: 180px;\n\tcolor: #AFAFAF;\n\tbackground-color: #fff;\n\tcursor: pointer;\n\twidth: 100%;\n}\n\n.bs-select.\\+disabled {\n\tcursor: not-allowed;\n\tbackground-color: #F9F9F9;\n\topacity: 1;\n\tborder: 1px dashed #CFCFCF;\n}\n\n.bs-select.\\+focus {\n\tbox-shadow: 0 0 0 2px rgba(76,175,80,.3); /* emulate the border */\n}\n\n.bs-select__selected {\n\twidth: calc(100% - 15px);\n\tdisplay: inline-block;\n}\n\n.bs-select__icon {\n\tdisplay: inline-block;\n\tborder-color: #AFAFAF transparent;\n\tborder-style: solid;\n\tborder-width: 6px 6px 0px 6px;\n\theight: 0px;\n\twidth: 0px;\n\tfloat:right;\n\tposition: relative;\n\ttop: 5px;\n}\n\nbs-select .bs-select__menu {\n\tdisplay: block;\n\tmax-height: 400px;\n\toverflow: auto;\n\twidth: 100%;\n\tpositoin: absolute;\n}\n\nbs-select .bs-select__menu li {\n\theight: 36px!important;\n}\n\nbs-select .bs-select__menu li.\\+selected > a {\n\tcolor: #333333;\n\ttext-decoration: none;\n\tbackground-color: #f7f7f7;\n}\n\n.bs-select__hidden-input {\n\topacity: 0;\n\tposition: absolute;\n\tleft: 0;\n\ttop:0;\n\twidth: 0;\n\theight: 0;\n}\n\n", ""]);
 
 /***/ },
 /* 8 */

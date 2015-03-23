@@ -14,6 +14,13 @@ bs-select {
 	width: 100%;
 }
 
+.bs-select.\+disabled {
+	cursor: not-allowed;
+	background-color: #F9F9F9;
+	opacity: 1;
+	border: 1px dashed #CFCFCF;
+}
+
 .bs-select.\+focus {
 	box-shadow: 0 0 0 2px rgba(76,175,80,.3); /* emulate the border */
 }

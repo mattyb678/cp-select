@@ -24,11 +24,11 @@
 				Beanstalk Select
 			</div>
 			<div class="bss-card__body" ng-controller="testController">
-				<div class="form-group">
-					<div class="bss-row">
-						<div class="bss-col-xs-3">
-						<bs-select collection="collection" ng-model="model"></bs-select>
-					</div>
+				<div class="form-group bss-row">
+					<bs-select class="bss-col-xs-4" collection="collection" ng-model="model"></bs-select>
+				</div>
+				<div class="form-group bss-row bss-margin-top-16">
+					<bs-select disabled class="bss-col-xs-4" collection="collection" ng-model="model"></bs-select>
 				</div>
 			</div>
 		</div>
