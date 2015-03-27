@@ -45,6 +45,8 @@ angular.module('bs-select')
 				});
 
 				scope.keyDown = function(e) {
+					e.preventDefault();
+
 					var key = e.which;
 					var item = ngModelCtrl.$viewValue;
 
@@ -137,21 +139,24 @@ angular.module('bs-select')
 
 					var distanceFromEnd = scope.collection.length - i;
 
-					if(i > 5 && distanceFromEnd < 6) {
-						setTimeout(function() {
-							el.find('.bs-select__menu')
-								.css({top: (-225 - ((5 - distanceFromEnd) * 36) + "px")})
-								.scrollTop(36 * i - 180);
-						})
-					} else if(i > 5) {
-						setTimeout(function() {
-							el.find('.bs-select__menu')
-								.css({top: "-200px"})
-								.scrollTop(36 * i - 180);
-						})
+					if (i > 5 && distanceFromEnd < 6) {
+						scope.dialogStyle = {
+							top: -222 - (5 - distanceFromEnd) * 36 + "px"
+						};
+						setTimeout(function () {
+							el.find(".bs-select__menu").scrollTop(36 * i - 180);
+						});
+					} else if (i > 5) {
+						scope.dialogStyle = {
+							top: "-198px"
+						};
+						setTimeout(function () {
+							el.find(".bs-select__menu").scrollTop(36 * i - 180);
+						});
 					} else {
-						el.find('.bs-select__menu')
-							.css({top: ((36 * i * -1) - 20 )+ "px"})
+						scope.dialogStyle = {
+							top: 2 + (36 * i * -1 - 20) + "px"
+						};
 					}
 				}
 			}
