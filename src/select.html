@@ -5,8 +5,8 @@
 	<div class="bs-select__icon">
 	</div>
 </div>
-<ul class="bs-select__menu bss-dropdown-menu" role="menu" ng-show="showDialog">
-	<li ng-mousedown="updateModel(item)" ng-repeat="item in collection" ng-class="{'+selected': (selectedIndex === $index)}">
-		<a>{{item.value}}</a>
+<ul class="bs-select__menu bss-dropdown-menu" role="menu" ng-if="showDialog">
+	<li ng-mousedown="updateModel(item)" ng-repeat="item in ::collection" ng-class="{'+selected': (selectedIndex === $index)}">
+		<a>{{::item.value}}</a>
 	</li>
 </ul>

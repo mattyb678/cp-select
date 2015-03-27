@@ -106,7 +106,11 @@ angular.module('bs-select')
 
 						if(i > -1) {
 							scope.selectedIndex = i;
-							positionDialog(scope.collection[scope.selectedIndex]);
+							if(scope.showDialog) {
+								positionDialog(scope.collection[scope.selectedIndex]);
+							} else {
+								scope.updateModel(scope.collection[scope.selectedIndex]);
+							}
 						}
 
 						keyTimeout = setTimeout(function() {
