@@ -5,7 +5,7 @@ var template = require('./select.html');
 require('./select.css');
 
 angular.module('bs-select')
-	.directive('bsSelect', function($timeout) {
+	.directive('bsSelect', ['$timeout', function($timeout) {
 
 		return {
 			restrict: "E",
@@ -142,7 +142,7 @@ angular.module('bs-select')
 					if (i > 5 && distanceFromEnd < 6) {
 						// Bottom 5
 						scope.dialogStyle = {
-							top: -224 - (5 - distanceFromEnd) * 36 + "px"
+							top: -222 - (5 - distanceFromEnd) * 36 + "px"
 						};
 						setTimeout(function () {
 							el.find(".bs-select__menu").scrollTop(36 * i - 180);
@@ -150,7 +150,7 @@ angular.module('bs-select')
 					} else if (i > 5) {
 						// Middle
 						scope.dialogStyle = {
-							top: "-200px"
+							top: "-198px"
 						};
 						setTimeout(function () {
 							el.find(".bs-select__menu").scrollTop(36 * i - 180);
@@ -158,10 +158,10 @@ angular.module('bs-select')
 					} else {
 						// Top 5
 						scope.dialogStyle = {
-							top: 0 + (36 * i * -1 - 20) + "px"
+							top: 2 + (36 * i * -1 - 20) + "px"
 						};
 					}
 				}
 			}
 		}
-	});
+	}]);

@@ -8,7 +8,7 @@ bs-select {
 	border-radius: 2px;
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,.26);
 	display: inline-block;
-	padding: 9px 14px;
+	padding: 8px 14px;
 	min-width: 140px;
 	color: #AFAFAF;
 	background-color: #fff;
@@ -42,7 +42,7 @@ bs-select {
 	width: 0px;
 	float:right;
 	position: relative;
-	top: 4px;
+	top: 6px;
 }
 
 bs-select .bs-select__menu {
