@@ -1,13 +1,14 @@
 bs-select {
 	position: relative;
 	height: 32px;
+	font-size: 12px;
 }
 
 .bs-select {
 	border-radius: 2px;
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,.26);
 	display: inline-block;
-	padding: 6px 14px;
+	padding: 9px 14px;
 	min-width: 140px;
 	color: #AFAFAF;
 	background-color: #fff;
@@ -41,7 +42,7 @@ bs-select {
 	width: 0px;
 	float:right;
 	position: relative;
-	top: 7px;
+	top: 4px;
 }
 
 bs-select .bs-select__menu {
@@ -50,6 +51,7 @@ bs-select .bs-select__menu {
 	overflow: auto;
 	width: 100%;
 	position: absolute;
+	font-size: 12px;
 }
 
 bs-select .bs-select__menu li {

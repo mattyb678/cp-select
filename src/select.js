@@ -140,22 +140,25 @@ angular.module('bs-select')
 					var distanceFromEnd = scope.collection.length - i;
 
 					if (i > 5 && distanceFromEnd < 6) {
+						// Bottom 5
 						scope.dialogStyle = {
-							top: -222 - (5 - distanceFromEnd) * 36 + "px"
+							top: -224 - (5 - distanceFromEnd) * 36 + "px"
 						};
 						setTimeout(function () {
 							el.find(".bs-select__menu").scrollTop(36 * i - 180);
 						});
 					} else if (i > 5) {
+						// Middle
 						scope.dialogStyle = {
-							top: "-198px"
+							top: "-200px"
 						};
 						setTimeout(function () {
 							el.find(".bs-select__menu").scrollTop(36 * i - 180);
 						});
 					} else {
+						// Top 5
 						scope.dialogStyle = {
-							top: 2 + (36 * i * -1 - 20) + "px"
+							top: 0 + (36 * i * -1 - 20) + "px"
 						};
 					}
 				}
