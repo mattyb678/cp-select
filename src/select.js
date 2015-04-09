@@ -23,7 +23,7 @@ angular.module('bs-select')
 				scope.selectedIndex = null;
 
 				ngModelCtrl.$render = function() {
-					var viewValue = ngModelCtrl.$viewValue ? ngModelCtrl.$viewValue.value : "";
+					var viewValue = ngModelCtrl.$viewValue ? getViewValue(ngModelCtrl.$viewValue) : "";
 					el.find('.bs-select__selected').text(viewValue);
 				}
 
@@ -122,16 +122,21 @@ angular.module('bs-select')
 
 				function getItemIndex(item) {
 					if(!item) return -1;
+					var isObject = _.has(item, 'value');
 					return _.findIndex(scope.collection, (iItem) => {
-						return item.key === iItem.key;
+						return isObject ? item.key === iItem.key : item === iItem;
 					});
 				}
 
 				function getIndexFromString(searchString) {
 					searchString = searchString.toLowerCase();
 					return _.findIndex(scope.collection, (iItem) => {
-						return iItem.value.toLowerCase().indexOf(searchString) === 0;
+						return getViewValue(iItem).toLowerCase().indexOf(searchString) === 0;
 					});
+				}
+
+				function getViewValue(option) {
+					return option.value || option;
 				}
 
 				function positionDialog(item) {

@@ -42,6 +42,15 @@ scope.collection = [{
 	"key": "AR"
 }];
 
+// The collection object can also be an array of strings
+scope.collection = [
+	"Alabama",
+	"Alaska",
+	"American Samoa",
+	"Arizona",
+	"Arkansas",
+];
+
 ```
 ## Demo
 http://beanstalkhq.github.io/bs-select/
